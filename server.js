@@ -11,6 +11,8 @@ const dashboardRouter = require('./app/routes/dashboardRouter');
 const memberRouter = require('./app/routes/memberRoute');
 const key = require('./app/config/keys');
 
+const PORT = process.env.PORT || key.keys.port;
+
 const app = express();
 
 app.set('view engine', 'ejs');
@@ -35,6 +37,6 @@ app.use('/auth', authRouter);
 app.use('/dashboard', dashboardRouter);
 app.use('/members', memberRouter);
 app.use('/', indexRouter);
-app.listen(key.keys.port, () => {
-  console.log('App working at port ' + key.keys.port);
+app.listen(PORT, () => {
+  console.log('App working at port ' + PORT);
 })

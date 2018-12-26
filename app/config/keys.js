@@ -6,5 +6,5 @@ module.exports.keys = {
   redirectUri: '',
   port: 3000,
   userAgent: '',
-  rootUrl: `http://localhost:3000`,
+  rootUrl: 'http://localhost:3000',
 }

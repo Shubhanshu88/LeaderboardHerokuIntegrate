@@ -1,0 +1,29 @@
+<table class="table table-hover">
+  <thead class="w-100">
+    <tr>
+      <th class="text-center">SrNo</th>
+      <th>Name</th>
+      <th class="toShow" colspan="2">Other Stats</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% yearOne.forEach((users) => { %>
+    <tr class="row-click" data-href="/dashboard/<%= users.login %>">
+      <td class="text-center">
+        <%= counter[0] %>
+      </td>
+      <td>
+        <a class="aGawds" href="/dashboard/<%= users.login %>">
+          <%= users.login%>
+        </a>
+      </td>
+      <td class="toShow">Repositories:
+        <%= users.public_repos %>
+      </td>
+      <td class="toShow">
+      </td>
+    </tr>
+    <% counter[0]++ %>
+    <% }) %>
+  </tbody>
+</table>

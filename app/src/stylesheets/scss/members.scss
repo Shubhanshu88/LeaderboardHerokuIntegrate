@@ -1,0 +1,212 @@
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,700');
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans:400,600,700');
+@import url('https://fonts.googleapis.com/css?family=Raleway:400,700');
+@import url('https://fonts.googleapis.com/css?family=Quicksand:400,500,700');
+
+@mixin transition($duration) {
+  -webkit-transition: $duration all ease;
+  -moz-transition: $duration all ease;
+  -ms-transition: $duration all ease;
+  -o-transition: $duration all ease;
+  transition: $duration all ease;
+}
+
+@mixin box-shadow($top, $left, $blur, $color, $top1, $left1, $blur1, $color1) {
+  -webkit-box-shadow: $top $left $blur $color, $top1 $left1 $blur1 $color1;
+  -moz-box-shadow: $top $left $blur $color, $top1 $left1 $blur1 $color1;
+  box-shadow: $top $left $blur $color, $top1 $left1 $blur1 $color1;
+}
+
+// Used
+$orgColor: #d2e0f3;
+$userData: #d3e0f3;
+$yearColor: #dae6f4;
+$usrName: #555555;
+$colorF: #828484;
+$colorS: #e1ecf8;
+$lighttd: #e0e9f3;
+
+* {
+  font-family: Montserrat;
+}
+
+body {
+  background-color: $colorS !important;
+}
+
+.cont, {
+  background-color: $colorS !important;
+}
+
+nav, .navbar-brand {
+  color: $colorF !important;
+}
+.navbar-brand {
+  font-weight: bold;
+}
+
+.topnav {
+  height: 11vh;
+  width: 100vw;
+  font-weight: 600 !important;
+  z-index: 1 !important;
+  background-color: $colorS;
+
+  .container {
+    padding: 1vh 4vw;
+  }
+  .active {
+    border-bottom: 3px solid $colorF;
+  }
+  .actLink {
+    color: $usrName !important;
+  }
+  li {
+    font-family: 'Noto Sans', sans-serif;
+    color: #767779 !important;
+    @include transition(1s);
+  }
+  li:hover {
+    text-shadow: 0 0 10px $orgColor;
+  }
+  
+} 
+
+.jumbotron {
+  margin-top: 11vh;
+  padding: 3vh 2vw 6vh 2vw !important;
+  margin-bottom: 0 !important;
+  color: white;
+  background-color: $colorS !important;
+  min-height: 89vh;
+    .name {
+      margin-top: 5vh;
+    }
+    h1 {
+      font-family: 'Quicksand';
+      color: $usrName !important;
+      font-size: 9vh !important;
+      font-weight: bold !important;
+    }
+    .master {
+      position: relative;
+      width: 80%;
+      padding-top: 2vh;
+      color: #767779;
+      padding-bottom: 2vh;
+        .username {
+          background-color: $userData;
+          @include box-shadow(0, 0, 5px , rgba(37, 35, 35, 0.281), 0, 2px, 3px, rgba(0, 0, 0, 0.281));
+          margin: 0 !important;
+          padding-top: 4vh;
+          padding-bottom: 4vh; 
+        }
+        .current {
+          max-height: 10vh;
+          margin: 2vh 0;
+        }
+        .container-fluid {
+          margin-top: 3vh;
+        }
+    }
+}
+
+.yearData {
+  h5 {
+  font-weight: bolder !important;
+  margin-left: 2rem;
+  display: inline-block;
+  }
+  .card {
+    background-color: $yearColor;
+    border-style: none;
+  }
+  .card-header {
+    @include box-shadow(0, 0, 5px, rgba(78, 73, 73, 0.281), 0, 2px, 5px, rgba(78, 73, 73, 0.281));
+    // box-shadow: 0  0px 5px rgba(78, 73, 73, 0.281), 0  2px 5px rgba(78, 73, 73, 0.281);
+    margin: 0 0 1vh 0;
+    background-color: $userData;
+    
+    .fa {
+      @include transition(0.3s);
+    }
+  }
+  .card-body {
+    padding: 0;
+    font-weight: 500 !important;
+    @include box-shadow(0, 0, 5px , rgba(37, 35, 35, 0.281), 0, 2px, 5px, rgba(0, 0, 0, 0.281));
+  }
+  thead {
+    background-color: #cad8ed !important;
+  }
+  tbody {
+    background-color: $lighttd;
+  }
+  .toShow {
+    display: none;
+    @media only screen and (max-width: 768px) { 
+      display: none;
+    }
+    @media only screen and (min-width: 768px) { 
+      display: table-cell;
+    }
+  }
+  background-color: $yearColor;
+  cursor: pointer;
+  @include box-shadow(0, 0, 5px , rgba(37, 35, 35, 0.281), 0, 2px, 5px, rgba(0, 0, 0, 0.281));
+  padding-bottom: 3vh;
+  padding-top: 3vh;
+}
+
+.spHead:after {
+  font-family:'FontAwesome';
+  margin-right: 6rem;
+  font-size: 4vh;
+  content:"\f13a";
+  float: left;
+  @include transition(0.5s);
+  color: inherit;
+}
+.card-header.collapsed .spHead:after {
+  content:"\f13a";
+  @include transition(0.5s);
+  transform: rotate(-90deg);
+}
+
+.graph {
+  margin-bottom: 10vh;
+  height: 50vh;
+  width: 40vw !important;
+}
+
+.toGraph {
+@media (max-width: 575.98px) {
+  display: none;
+  line-height: 1px;
+ }
+
+@media (min-width: 576px) and (max-width: 767.98px) { 
+  display: inline;
+  line-height: 2px;
+ }
+
+@media (min-width: 768px) and (max-width: 991.98px) { 
+  display: inline-block;
+  line-height: 3px;
+ }
+
+@media (min-width: 992px) { 
+  display: block;
+  line-height: 4px !important;
+ }
+}
+
+.footer {
+  background-color: $colorS;
+  width: 100vw;
+  font-weight: 500;
+    i {
+      color: $usrName;
+    }
+}
